@@ -1,9 +1,9 @@
 <?php
-	
+
 	add_action('after_setup_theme', ea_setup);
 	/**  ea_setup
 	*  init stuff that we have to init after the main theme is setup.
-	* 
+	*
 	*/
 	function ea_setup() {
 	 /* do stuff heree. */
@@ -32,17 +32,18 @@
         	display: none;
         	visibility: hidden;
         }
-        
+
     </style>
 <?php }
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
 
-/*puts a link on the form abot the login botton - not what we wanted. 
+/*puts a link on the form abot the login botton - not what we wanted.
 add_action('login_form', 'eai_login_links');*/
 
-
-add_filter('login_footer',  'eai_login_links'); /* add links to bottom of wp_login.php form */ 
-function eai_login_links() { 
+/* add links to bottom of wp_login.php form */
+/* 19Dec16 zig - part of leaky paywall that we are not using anymore
+add_filter('login_footer',  'eai_login_links');
+function eai_login_links() {
 	?>
 	<ul class="eai_login_links">
 		<li>
@@ -53,7 +54,7 @@ function eai_login_links() {
 		</li>
 	</ul>
 	<?php
-}
+} */
 
 function eai_lost_password_confirm() {
 
@@ -87,5 +88,5 @@ function eai_lost_password_confirm() {
     	<?php
     }
 }
- add_action('login_headerurl', 'eai_lost_password_confirm'); // change the logo link 
+ add_action('login_headerurl', 'eai_lost_password_confirm'); // change the logo link
 ?>
